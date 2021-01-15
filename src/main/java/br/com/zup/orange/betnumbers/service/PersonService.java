@@ -30,7 +30,6 @@ public class PersonService {
     }
 
     public MessageResponseDTO findAll(){
-
         personRepository.findAll().forEach(System.out::println);
         return MessageResponseDTO
                 .builder()

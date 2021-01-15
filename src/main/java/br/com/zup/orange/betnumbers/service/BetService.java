@@ -1,6 +1,5 @@
 package br.com.zup.orange.betnumbers.service;
 
-import br.com.zup.orange.betnumbers.dto.response.MessageResponseDTO;
 import br.com.zup.orange.betnumbers.entity.Bet;
 import br.com.zup.orange.betnumbers.entity.Person;
 import br.com.zup.orange.betnumbers.repository.BetRepository;
@@ -8,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class BetService {
@@ -20,18 +21,30 @@ public class BetService {
         this.betRepository = betRepository;
     }
 
-    public MessageResponseDTO createBet(Person person){
+    public List<Integer> createBet(Person person){
         Bet bet = new Bet();
         bet.setPerson(person);
-        List<Integer> numbers = new ArrayList<>();
-        numbers.add(1);
-        numbers.add(2);
-        numbers.add(3);
-        bet.setBets(numbers);
+        bet.setBets(generateNumber(60,6));
         Bet betToSave = betRepository.save(bet);
-        return MessageResponseDTO
-                .builder()
-                .message("Created bet with ID " + betToSave.getId())
-                .build();
+        return betToSave.getBets();
     }
+
+    public List<Integer> generateNumber(Integer max, Integer quant){
+        Random random = new Random();
+        List<Integer> numbers = new ArrayList<>();
+        do{
+            Integer number = random.nextInt(max);
+            if(!numbers.contains(number)){
+                numbers.add(number);
+            }
+        }while (numbers.size() < quant);
+        Collections.sort(numbers);
+        return numbers;
+    }
+
+    public List<Bet> findAllByPerson(Person person){
+        List<Bet> bet = betRepository.findBetsByPerson(person);
+        return bet;
+    }
+
 }

@@ -29,12 +29,4 @@ public class PersonController {
     public MessageResponseDTO findAll(){
         return personService.findAll();
     }
-
-//    @GetMapping("/email")
-//    @ResponseStatus(HttpStatus.FOUND)
-//    public Person findByEmail(String email){
-//        email = "gjcs3@outlook.com.br";
-//        return personService.findByEmail(email);
-//    }
-
 }
