@@ -5,8 +5,10 @@
     </CLASSES>
     <JAVADOC>
       <root url="jar://$MAVEN_REPOSITORY$/org/apache/Tomcat/embed/tomcat-embed-websocket/9.0.41/tomcat-embed-websocket-9.0.41-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/Tomcat/embed/tomcat-embed-websocket/9.0.41/tomcat-embed-websocket-9.0.41-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/Tomcat/embed/tomcat-embed-websocket/9.0.41/tomcat-embed-websocket-9.0.41-sources.jar!/" />
       <root url="jar://$MAVEN_REPOSITORY$/org/apache/Tomcat/embed/tomcat-embed-websocket/9.0.41/tomcat-embed-websocket-9.0.41-sources.jar!/" />
     </SOURCES>
   </library>

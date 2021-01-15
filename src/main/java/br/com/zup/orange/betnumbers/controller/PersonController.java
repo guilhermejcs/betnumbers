@@ -23,4 +23,18 @@ public class PersonController {
     public MessageResponseDTO createPerson(@RequestBody Person person){
         return personService.createPerson(person);
     }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.FOUND)
+    public MessageResponseDTO findAll(){
+        return personService.findAll();
+    }
+
+//    @GetMapping("/email")
+//    @ResponseStatus(HttpStatus.FOUND)
+//    public Person findByEmail(String email){
+//        email = "gjcs3@outlook.com.br";
+//        return personService.findByEmail(email);
+//    }
+
 }

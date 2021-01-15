@@ -5,7 +5,6 @@ import br.com.zup.orange.betnumbers.entity.Person;
 import br.com.zup.orange.betnumbers.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @Service
 public class PersonService {
@@ -22,6 +21,20 @@ public class PersonService {
         return MessageResponseDTO
                 .builder()
                 .message("Created person with ID " + savedPerson.getId())
+                .build();
+    }
+
+    public Person findByEmail(String email){
+        Person person = personRepository.findByEmail(email);
+        return person;
+    }
+
+    public MessageResponseDTO findAll(){
+
+        personRepository.findAll().forEach(System.out::println);
+        return MessageResponseDTO
+                .builder()
+                .message("Created person with ID " )
                 .build();
     }
 }
