@@ -1,4 +1,4 @@
-package br.com.zup.orange.betnumbers.dto.response;
+package br.com.zup.orange.betnumbers.dto;
 
 import lombok.Builder;
 import lombok.Data;
