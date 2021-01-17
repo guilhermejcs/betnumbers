@@ -44,7 +44,6 @@ public class BetController {
     @GetMapping(value = "/{email}")
     @ResponseStatus(HttpStatus.OK)
     public List<List<Integer>> betsByEmail(@PathVariable("email") String email) {
-        List<List<Integer>> onlyBets = betService.betsByEmail(email);
-        return onlyBets;
+        return betService.betsByEmail(email);
     }
 }

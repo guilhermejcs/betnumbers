@@ -29,7 +29,8 @@ public class PersonService {
         try {
             personRepository.save(person);
         } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "This email is already in use: " + person.getEmail());
+            throw new ResponseStatusException(HttpStatus.CONFLICT,
+                    "This email is already in use: " + person.getEmail());
         }
         return MessageResponseDTO
                 .builder()

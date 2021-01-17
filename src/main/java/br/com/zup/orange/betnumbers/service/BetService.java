@@ -33,7 +33,8 @@ public class BetService {
      */
     public List<Integer> createBet(Person person) {
         if (person == null) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "This e-mail is not registered");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,
+                    "This e-mail is not registered");
         }
         Bet bet = new Bet();
         bet.setPerson(person);
@@ -88,7 +89,8 @@ public class BetService {
      * @return a list with all bets associated to one person
      */
     public List<Bet> findAllByPerson(Person person) {
-        return betRepository.findBetsByPerson(person);
+        return betRepository
+                .findBetsByPerson(person);
     }
 
     /**
@@ -106,5 +108,4 @@ public class BetService {
         }
         return onlyBets;
     }
-
 }

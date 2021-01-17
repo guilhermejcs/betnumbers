@@ -28,5 +28,4 @@ public class PersonController {
     public MessageResponseDTO createPerson(@RequestBody Person person) {
         return personService.createPerson(person);
     }
-
 }

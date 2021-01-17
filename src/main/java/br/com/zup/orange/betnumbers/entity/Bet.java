@@ -21,6 +21,7 @@ public class Bet {
     @ElementCollection
     private List<Integer> bets;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REMOVE})
+    @ManyToOne(fetch = FetchType.LAZY,
+            cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REMOVE})
     private Person person;
 }
